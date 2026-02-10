@@ -11,13 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "CompanyWebsite": {
+    "companyWebsite": {
       "type": "string"
     },
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Email": {
+    "email": {
       "type": "email"
     }
   }
