@@ -5,10 +5,7 @@ export default [
    {
     name: 'strapi::cors',
     config: {
-      origin: [
-        'https://ad-mandala-q8cq.vercel.app',
-        'https://www.admandala.com/', // your frontend
-      ],
+     origin: ['*'],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization'],
       credentials: false,
