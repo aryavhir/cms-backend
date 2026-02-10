@@ -1,17 +1,32 @@
+console.log('🔥 Strapi middlewares file loaded');
+
 export default [
-  'strapi::logger',
   'strapi::errors',
-  'strapi::security',
-   {
+
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", '*'],
+        },
+      },
+    },
+  },
+
+  {
     name: 'strapi::cors',
     config: {
-     origin: ['*'],
+      origin: ['*'],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization'],
       credentials: false,
     },
   },
+
   'strapi::poweredBy',
+  'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',
